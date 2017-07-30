@@ -1,0 +1,25 @@
+#!/usr/bin/env mksh
+#
+# === {{CMD}}
+#
+set -u -e -o pipefail
+
+sudo apt-get install git zsh
+
+if ! type nvim &>/dev/null ; then
+  sudo apt-get install software-properties-common
+  sudo add-apt-repository ppa:neovim-ppa/stable
+  sudo apt-get update
+  sudo apt-get install neovim
+fi
+
+if ! type windscribe-cli &>/dev/null ; then
+  sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-key FDC247B7
+  echo 'deb https://repo.windscribe.com/ubuntu zesty main' | sudo tee /etc/apt/sources.list.d/windscribe-repo.list
+  sudo apt-get update
+  sudo apt-get install windscribe-cli
+  windscribe login
+  windscribe connect
+fi
+
+
