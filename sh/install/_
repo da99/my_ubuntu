@@ -4,14 +4,7 @@
 #
 set -u -e -o pipefail
 
-sudo apt-get install git zsh
-
-if ! type nvim &>/dev/null ; then
-  sudo apt-get install software-properties-common
-  sudo add-apt-repository ppa:neovim-ppa/stable
-  sudo apt-get update
-  sudo apt-get install neovim
-fi
+sudo apt-get install git zsh neovim
 
 if ! type windscribe-cli &>/dev/null ; then
   sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-key FDC247B7
