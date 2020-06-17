@@ -16,3 +16,11 @@ if ! type windscribe-cli &>/dev/null ; then
 fi
 
 
+sudo apt update
+sudo apt upgrade
+sudo apt install git rtorrent htop bmon fish software-properties-common zsh samba
+sudo add-apt-repository ppa:neovim-ppa/stable
+sudo apt update
+sudo apt install neovim
+sudo adduser da || :
+sudo adduser da sudo || :
